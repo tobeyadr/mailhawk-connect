@@ -13,9 +13,7 @@
 defined( 'ABSPATH' ) || exit;
 
 /**
- * LLMS_SendWP class..
- *
- * @since 3.36.1
+ * MailHawk_Connect class.
  */
 class MailHawk_Connect {
 
@@ -28,7 +26,6 @@ class MailHawk_Connect {
 	 * Constructor.
 	 *
 	 * @return void
-	 * @since 3.36.1
 	 *
 	 */
 	public function __construct() {
@@ -37,13 +34,11 @@ class MailHawk_Connect {
 
 
 	/**
-	 * Ajax callback for installing SendWP Plugin.
-	 *
-	 * @return void
-	 * @since 3.36.1
+	 * Ajax callback for installing MailHawk Plugin.
 	 *
 	 * @hook wp_ajax_my_plugin_mailhawk_remote_install
-	 *
+	 * 
+	 * @return void
 	 */
 	public function ajax_callback_remote_install() {
 
@@ -57,8 +52,6 @@ class MailHawk_Connect {
 	 * Remote installation method.
 	 *
 	 * @return array
-	 * @since 3.36.1
-	 *
 	 */
 	public function do_remote_install() {
 
@@ -103,11 +96,9 @@ class MailHawk_Connect {
 	}
 
 	/**
-	 * Install / Activate SendWP plugin.
+	 * Install / Activate MailHawk plugin.
 	 *
 	 * @return \WP_Error|true
-	 * @since 3.36.1
-	 *
 	 */
 	private function install() {
 
@@ -156,7 +147,7 @@ class MailHawk_Connect {
 			}
 		}
 
-		// Final check to see if SendWP is available.
+		// Final check to see if MailHawk is available.
 		if ( ! defined( 'MAILHAWK_VERSION' ) ) {
 			return new \WP_Error( 'mailhawk_not_found', __( 'MailHawk plugin not found. Please try again.', 'my_plugin' ), $install );
 		}
@@ -205,8 +196,6 @@ class MailHawk_Connect {
 	 * Output some quick and dirty inline CSS.
 	 *
 	 * @return void
-	 * @since 3.36.1
-	 *
 	 */
 	public function output_css() {
 		?>
@@ -261,8 +250,6 @@ class MailHawk_Connect {
 	 * Output some quick and dirty inline JS.
 	 *
 	 * @return void
-	 * @since 3.36.1
-	 *
 	 */
 	public function output_js() {
 		?>
@@ -274,7 +261,7 @@ class MailHawk_Connect {
             });
 
             /**
-             * Perform AJAX request to install SendWP plugin.
+             * Perform AJAX request to install MailHawk plugin.
              *
              * @since 3.36.1
              *
@@ -298,14 +285,14 @@ class MailHawk_Connect {
             }
 
             /**
-             * Register client with SendWP.
+             * Register client with MailHawk.
              *
              * @since 3.36.1
              *
              * @param {string} register_url Registration URL.
              * @param {string} client_state string state for oauth.
              * @param {string} redirect_uri Client redirect URL.
-             * @param {int} partner_id SendWP partner ID.
+             * @param {int} partner_id MailHawk partner ID.
              * @return {void}
              */
             function my_plugin_mailhawk_register_client(register_url, client_state, redirect_uri, partner_id) {
