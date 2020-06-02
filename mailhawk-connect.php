@@ -89,8 +89,8 @@ class MailHawk_Connect {
 		return array(
 			'partner_id'   => self::PARTNER_ID,
 			'register_url' => esc_url( trailingslashit( MAILHAWK_LICENSE_SERVER_URL ) ),
-			'client_state' => esc_url( \MailHawk\Keys::instance()->state() ),
 			'redirect_uri' => esc_url( $redirect ),
+			'client_state' => esc_attr( \MailHawk\Keys::instance()->state() ),
 		);
 
 	}
