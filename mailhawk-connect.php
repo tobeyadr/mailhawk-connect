@@ -189,7 +189,7 @@ class MailHawk_Connect {
 
 		}
 
-		echo sprintf( '<button type="button" class="button button-primary big-button" id="my_plugin-mailhawk-connect"><span class="dashicons dashicons-email-alt"></span> %s</button>', __( 'Connect MailHawk' ) );
+		echo sprintf( '<button type="button" class="button button-primary big-button" id="my_plugin-mailhawk-connect"><span class="dashicons dashicons-email-alt"></span> %s</button>', __( 'Connect MailHawk', 'my_plugin' ) );
 	}
 
 	/**
